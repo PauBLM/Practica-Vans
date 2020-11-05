@@ -1,0 +1,324 @@
+@import url("https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700;900&display=swap");
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+  box-sizing: border-box; }
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block; }
+
+body {
+  line-height: 1; }
+
+ol, ul {
+  list-style: none; }
+
+blockquote, q {
+  quotes: none; }
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none; }
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+a {
+  text-decoration: none;
+  color: inherit; }
+
+/**/
+body {
+  font-family: 'Titillium Web', sans-serif; }
+
+.nav {
+  position: relative; }
+  .nav__img {
+    display: block;
+    max-width: 150px;
+    margin: 0 auto;
+    padding: 20px; }
+  .nav__botones {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    height: calc(100vh - 102px);
+    width: 100%;
+    margin-top: 13px;
+    position: absolute;
+    top: 90px;
+    left: -100%;
+    z-index: 2;
+    transition: left 1s; }
+    .nav__botones__boton {
+      margin-top: 30px;
+      color: white;
+      padding: 20px;
+      font-size: 20px;
+      text-transform: uppercase;
+      font-weight: bold;
+      background-size: 30px; }
+      .nav__botones__boton::after {
+        content: "";
+        display: block;
+        width: 0;
+        opacity: 0;
+        height: 3px;
+        background-color: white;
+        transition: width 1s, opacity 0.5s; }
+      .nav__botones__boton:hover::after {
+        width: 100%;
+        opacity: 1; }
+    .nav__botones::after {
+      content: '';
+      display: block;
+      width: 90px;
+      height: 90px;
+      background-image: url("img/menu.svg");
+      background-size: 30px;
+      background-repeat: no-repeat;
+      background-position: top right;
+      position: fixed;
+      top: 30px;
+      left: -40px; }
+    .nav__botones:hover {
+      left: 0; }
+
+.principal {
+  display: grid;
+  grid-template-rows: repeat(2, 50%);
+  height: calc(100vh - 102px);
+  min-height: 700px;
+  background-image: url(img/background.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  overflow: hidden; }
+  .principal__titulo__texto {
+    color: white;
+    font-size: 50px;
+    margin: 20px 40px; }
+  .principal__video {
+    display: none; }
+  .principal__pie {
+    max-width: 300px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    margin: auto; }
+    .principal__pie__parrafo {
+      color: white;
+      font-size: 25px;
+      z-index: 1; }
+    .principal__pie__imagen {
+      width: 300px;
+      z-index: 1; }
+    .principal__pie__boton {
+      display: block;
+      background-color: crimson;
+      color: white;
+      width: 200px;
+      text-align: center;
+      padding: 10px 20px;
+      margin: 0 auto;
+      z-index: 1; }
+    .principal__pie::after {
+      content: '';
+      display: block;
+      width: 200%;
+      height: 200%;
+      background-image: url("img/dot.png");
+      background-size: 15px;
+      position: absolute;
+      top: -30px;
+      left: 0;
+      transform: rotate(-25deg);
+      z-index: 0; }
+    .principal__pie::before {
+      content: '';
+      display: block;
+      width: 200%;
+      height: 200%;
+      background-color: rgba(0, 0, 0, 0.4);
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: rotate(-15deg);
+      z-index: 0; }
+
+.contact {
+  height: calc(100vh - 102px);
+  min-height: 102px;
+  background-image: url(img/background-contact.jpg);
+  background-position: 20%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center; }
+  .contact .info {
+    max-width: 400px;
+    margin: auto; }
+    .contact .info__titulo {
+      color: white;
+      font-size: 30px;
+      margin-bottom: 20px; }
+    .contact .info__texto {
+      color: white;
+      margin-bottom: 20px; }
+    .contact .info__tel, .contact .info__email {
+      display: block;
+      color: white;
+      margin-bottom: 20px; }
+    .contact .info__social {
+      display: flex;
+      justify-content: center; }
+      .contact .info__social__link {
+        margin: 6px; }
+        .contact .info__social__link svg {
+          width: 40px;
+          height: 40px;
+          fill: white; }
+  .contact .map {
+    max-width: 400px; }
+  .contact .formulario {
+    margin: auto; }
+    .contact .formulario h3 {
+      color: white;
+      font-size: 30px;
+      margin-bottom: 30px;
+      letter-spacing: 1px; }
+    .contact .formulario .form {
+      width: 100%;
+      max-width: 500px;
+      margin: 0 auto;
+      display: flex;
+      flex-wrap: wrap; }
+      .contact .formulario .form__input {
+        display: block;
+        margin-bottom: 30px;
+        width: calc(50% - 10px);
+        position: relative; }
+        .contact .formulario .form__input:first-child, .contact .formulario .form__input:nth-child(3) {
+          margin-right: 20px; }
+        .contact .formulario .form__input input {
+          width: 100%;
+          position: relative;
+          font-family: 'Titillium Web',   sans-serif;
+          padding: 6px 15px;
+          z-index: 1;
+          box-sizing: border-box; }
+          .contact .formulario .form__input input:focus {
+            border: 2px solid black; }
+            .contact .formulario .form__input input:focus + label {
+              top: -20px; }
+          .contact .formulario .form__input input::placeholder {
+            color: black; }
+        .contact .formulario .form__input label {
+          font-size: 15px;
+          letter-spacing: 0.5s;
+          position: absolute;
+          top: 0;
+          left: 10px;
+          font-weight: 800;
+          text-transform: uppercase;
+          transition: top 0.5s; }
+      .contact .formulario .form select, .contact .formulario .form textarea {
+        width: 100%;
+        border: 2px solid white;
+        transition: border 0.5s; }
+        .contact .formulario .form select:focus, .contact .formulario .form textarea:focus {
+          border: 2px solid black; }
+      .contact .formulario .form select {
+        padding: 5px 10px;
+        margin-bottom: 30px;
+        font-family: 'Titillium Web', sans-serif; }
+      .contact .formulario .form textarea {
+        padding: 5px 10px;
+        height: 80px;
+        font-family: 'Titillium Web', sans-serif; }
+      .contact .formulario .form button {
+        display: block;
+        background-color: crimson;
+        color: white;
+        width: 200px;
+        text-align: center;
+        padding: 10px 20px;
+        margin: 40px auto 0;
+        transition: background-color 0.5s;
+        border: none; }
+        .contact .formulario .form button:hover {
+          background-color: #000; }
+
+@media all and (min-width: 720px) {
+  .nav {
+    max-width: 100%; }
+    .nav .barra {
+      display: flex;
+      align-items: center;
+      margin: 0 100px; }
+    .nav__img {
+      margin: 0; }
+    .nav__botones {
+      background-color: transparent;
+      flex-direction: row;
+      justify-content: flex-end;
+      height: auto;
+      position: static; }
+      .nav__botones::after {
+        display: none; }
+      .nav__botones__boton {
+        color: black;
+        margin: 0; }
+        .nav__botones__boton::after {
+          background-color: black; }
+
+  .principal {
+    height: 100vh;
+    display: grid;
+    grid-template-columns: repeat 2, 50%;
+    background-image: none;
+    position: relative; }
+    .principal__video {
+      display: block;
+      position: absolute;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      filter: brightness(50%); }
+    .principal__titulo {
+      width: 600px;
+      margin: 30px auto; }
+    .principal__pie {
+      grid-row: 2;
+      grid-column: 2;
+      align-items: center; }
+      .principal__pie__imagen {
+        order: -1; }
+
+  .contact {
+    display: grid;
+    grid-template-columns: repeat(2, 50%); } }
+
+/*# sourceMappingURL=vans.css.map */
